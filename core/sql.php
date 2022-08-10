@@ -12,7 +12,7 @@ function insert(string $entidade, array $dados) : string
     return $instrucao;
 
 }
-function update(string $entidade, array $dados, array $criterio= []) : string
+function update(string $entidade, array $dados, array $criterio = []) : string
 {
     $instrucao = "UPDATE {$entidade}";
     foreach ($dados as $campo => $dado){
