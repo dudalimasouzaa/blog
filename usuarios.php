@@ -58,7 +58,7 @@
 
                 ?>
                 <table class="table table-bordered table-hover table stripped
-                                table-responsive{-sm|-md|-lg|-xl">
+                                table-responsive{-sm|-md|-lg|-xl}">
                     <thead>
                         <tr>
                             <td>Nome</td>
@@ -78,12 +78,23 @@
                             <td><?php echo $entidade['nome'] ?></td>
                             <td><?php echo $entidade['email'] ?></td>
                             <td><?php echo $data?></td>
-                            <td><a href='core/usuario_repositorio.php</td>
+                            <td><a href='core/usuario_repositorio.php?acao=status&id=<?php echo $entidade['id']?>
+                            &valor=<?php echo !$entidade['ativo']?>'><?php echo ($entidade['ativo']==1) ?
+                            'Desativar' : 'Ativar'; ?></a></td>
                         </tr>
+                        <?php endforeach; ?>
                     </tbody>
                 </table>
             </div>
         </div>
+        <div class="row">
+            <div class="col-md-12">
+                <?php
+                    include 'includes/rodape.php'
+                ?>
+            </div>
         </div>
+        </div>
+        <script src="lib/bootstrap-4.2.1-dist/js/bootstrap.min.js"></script>
     </body>
 </html>
